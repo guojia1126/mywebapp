@@ -8,24 +8,16 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/json2.js"></script>
 <script type="text/javascript">
-function myfun(){
-	var obj = $.parseJSON('{"name":"John"}');
-	alert( obj.name === "John" );
-	var jj = JSON.parse('{"categoryId":1,"categoryName":"饮品","categoryImage":"/upload/yinpin.jpg"}');
-	var bb = {
-			name:"fadf",
-			age:18
+function fun(){
+	var list = JSON.parse('${users}');
+	for(var i in list){
+		alert(JSON.stringify(list[i]));
 	}
-	var arr = new Array();
-	arr.push(jj);
-	arr.push(bb);
-	alert(JSON.stringify(arr));
-	//alert(jj.categoryName)
-	alert('${command}')
+	
 }
-myfun();
+fun()
 </script>
 </head>
-<body>${command}
+<body>${users}
 </body>
 </html>

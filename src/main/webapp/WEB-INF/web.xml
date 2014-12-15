@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
     http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
@@ -19,21 +18,25 @@
 		<servlet-name>Spring</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
-<!-- 	<servlet> 
-		<description>Apache CXF Endpoint</description>
-		<display-name>cxf</display-name>
-		<servlet-name>cxf</servlet-name>
-		<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
-		<load-on-startup>2</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>cxf</servlet-name>
-		<url-pattern>/services/*</url-pattern>
-	</servlet-mapping>
-	<session-config>
-		<session-timeout>60</session-timeout>
-	</session-config>-->
+
+
+	<filter>
+		<filter-name>Character Encoding</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>Character Encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- <servlet> <description>Apache CXF Endpoint</description> <display-name>cxf</display-name> <servlet-name>cxf</servlet-name> 
+		<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class> <load-on-startup>2</load-on-startup> 
+		</servlet> <servlet-mapping> <servlet-name>cxf</servlet-name> <url-pattern>/services/*</url-pattern> 
+		</servlet-mapping> <session-config> <session-timeout>60</session-timeout> </session-config> -->
 
 	<servlet-mapping>
 		<servlet-name>default</servlet-name>
