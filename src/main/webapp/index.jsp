@@ -19,7 +19,7 @@
 				user : JSON.stringify(user)
 			},
 			success : function(msg) {
-				alert(JSON.stringify(msg));
+				alert(msg);
 			},
 			error : function(msg) {
 				alert(JSON.stringify(msg));

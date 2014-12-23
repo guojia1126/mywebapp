@@ -43,10 +43,10 @@ public class UserAction {
 	
 	@RequestMapping(value = "test", method = RequestMethod.POST)
 	@ResponseBody
-	public Map<String,Object> test(@RequestParam(value="user") String user,HttpServletRequest request, HttpServletResponse response) {
+	public String test(@RequestParam(value="user") String user,HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("user==="+user);
 		Map<String,Object> map = new HashMap<String, Object>();
 		map.put("success", "cool");
-		return map;
+		return "你好";
 	}
 }
